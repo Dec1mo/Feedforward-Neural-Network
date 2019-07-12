@@ -1,0 +1,4 @@
+*.pkl
+/raw_data/*
+/preprocess_data/*
+/model/*

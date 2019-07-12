@@ -1,0 +1,29 @@
+Notes: Line after "#" is a comment
+Folder-Tree must be:
+File after "#" is not necessary because they will be created at run time.
+./
+	model/
+		#b.pkl
+		#W.pkl
+	preprocess_data/
+		test/
+			#X_test.pkl
+			#y_test.pkl
+		train/
+			#X_train.pkl
+			#y_train.pkl
+		#tfidf_vect.pkl
+	raw_data/
+		test/
+			neg/
+				#Bunch of neg test files
+			pos/
+				#Bunch of pos test files
+		train/
+			neg/
+				#Bunch of neg train files
+			pos/
+				#Bunch of pos train files
+	src/
+		feature_transformer.py
+		model.py
