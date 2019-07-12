@@ -1,29 +1,50 @@
 Notes: Line after "#" is a comment
-Folder-Tree must be:
-File after "#" is not necessary because they will be created at run time.
-./
-	model/
-		#b.pkl
-		#W.pkl
-	preprocess_data/
-		test/
-			#X_test.pkl
-			#y_test.pkl
-		train/
-			#X_train.pkl
-			#y_train.pkl
-		#tfidf_vect.pkl
-	raw_data/
-		test/
-			neg/
-				#Bunch of neg test files
-			pos/
-				#Bunch of pos test files
-		train/
-			neg/
-				#Bunch of neg train files
-			pos/
-				#Bunch of pos train files
-	src/
-		feature_transformer.py
-		model.py
+1. Folder-Tree must be:
+	File after "#" is not necessary because they will be created at run time.
+	
+	./
+		model/
+			#b.pkl
+			#W.pkl
+		preprocess_data/
+			test/
+				#X_test.pkl
+				#y_test.pkl
+			train/
+				#X_train.pkl
+				#y_train.pkl
+			#tfidf_vect.pkl
+		raw_data/
+			test/
+				neg/
+					#Bunch of neg test files
+					...
+				pos/
+					#Bunch of pos test files
+					...
+			train/
+				neg/
+					#Bunch of neg train files
+					...
+				pos/
+					#Bunch of pos train files
+					...
+		src/
+			feature_transformer.py
+			model.py
+
+2. Parameters:
+	In feature_transformer.py:
+		- In function all_file_to_text():
+			current_label is set = -1 because the level of the folder in the folder-tree is quite specific.
+	In model.py:
+		- In function backpropagation():
+			rate is set = 1. This is the learning rate, can be adjusted if you want.
+		- In function neu_net():
+			epochs is set = 1000. The more epochs, the more accurate but slower.
+		- In function main():
+			sizes = [len(tfidf_vect.vocabulary_), 1024, 256, 128, 2]. These are the units on the layers. Just define these, don't need to define the number of layers.
+			The first element should be the dimension of a vector, the last element should be the number of output classes.
+			
+			
+		
