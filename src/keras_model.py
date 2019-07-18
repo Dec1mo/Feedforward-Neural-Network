@@ -7,8 +7,6 @@ from scipy import sparse
 
 def CNN_model(input_dim, num_classes):
   model = Sequential()
-  #input_dim = X_train.shape[1]  # Number of features
-  model = Sequential()
   model.add(layers.Dense(10, input_dim=input_dim, activation='relu'))
   model.add(layers.Dense(1, activation='sigmoid'))
   return model
